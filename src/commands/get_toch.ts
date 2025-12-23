@@ -1,7 +1,9 @@
 import { MyContext } from "../bot";
 import { InlineKeyboard } from "grammy";
+import dotenv from "dotenv";
+dotenv.config();
 
-const spreadsheetId = "1LjUp9pNod7bcG01XhRQsC0lLLSYRyMJrNSg9-4PnULM";
+const spreadsheetId = process.env.SCHEDULE_ID;
 const sheetName = "По датам";
 
 export const getTochCommand = async (ctx: MyContext) => {

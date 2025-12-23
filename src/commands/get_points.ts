@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
 import { MyContext } from "../bot";
 import { User } from "../models/user.model";
 import parseDateString from "../utils/dateParser";
+dotenv.config();
 
-const spreadsheetId = "1LjUp9pNod7bcG01XhRQsC0lLLSYRyMJrNSg9-4PnULM";
+const spreadsheetId = process.env.SCHEDULE_ID;
 const sheetName = "По датам";
 
 export const getPoint = async (ctx: MyContext, pointName: string) => {
